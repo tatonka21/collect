@@ -606,7 +606,7 @@ public class DownloadFormsTask extends
                 continue;
             }
             String name = mediaFileElement.getName();
-            if (name.equalsIgnoreCase("mediaFile")) {
+            if ("mediaFile".equalsIgnoreCase(name)) {
                 String filename = null;
                 String hash = null;
                 String downloadUrl = null;
@@ -623,17 +623,17 @@ public class DownloadFormsTask extends
                         continue;
                     }
                     String tag = child.getName();
-                    if (tag.equals("filename")) {
+                    if ("filename".equals(tag)) {
                         filename = XFormParser.getXMLText(child, true);
                         if (filename != null && filename.length() == 0) {
                             filename = null;
                         }
-                    } else if (tag.equals("hash")) {
+                    } else if ("hash".equals(tag)) {
                         hash = XFormParser.getXMLText(child, true);
                         if (hash != null && hash.length() == 0) {
                             hash = null;
                         }
-                    } else if (tag.equals("downloadUrl")) {
+                    } else if ("downloadUrl".equals(tag)) {
                         downloadUrl = XFormParser.getXMLText(child, true);
                         if (downloadUrl != null && downloadUrl.length() == 0) {
                             downloadUrl = null;

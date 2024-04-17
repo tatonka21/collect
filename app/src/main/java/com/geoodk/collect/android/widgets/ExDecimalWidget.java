@@ -102,7 +102,7 @@ public class ExDecimalWidget extends ExStringWidget {
     @Override
     public IAnswerData getAnswer() {
         String s = mAnswer.getText().toString();
-        if (s == null || s.equals("")) {
+        if (s == null || "".equals(s)) {
             return null;
         } else {
             try {

@@ -27,7 +27,7 @@ public class MapHelper {
 		ITileSource baseTiles;
         String[] baseURL = new String[]{"http://api.mapbox.com/v4/jonnordling.0d981b0d/"};
         String mapProvider;
-        if (basemap.equals("Default")){
+        if ("Default".equals(basemap)){
             mapProvider = MAPBOX;
             baseURL = new String[]{
                     "http://a.tiles.mapbox.com/v4/jonnordling.0d981b0d/",
@@ -35,7 +35,7 @@ public class MapHelper {
                     "http://c.tiles.mapbox.com/v4/jonnordling.0d981b0d/",
                     "http://d.tiles.mapbox.com/v4/jonnordling.0d981b0d/"
             };
-        }else if(basemap.equals("Steets Classic")){
+        }else if("Steets Classic".equals(basemap)){
             mapProvider = MAPBOX;
             baseURL = new String[]{
                     "http://a.tiles.mapbox.com/v4/jonnordling.n141ednk/",
@@ -43,7 +43,7 @@ public class MapHelper {
                     "http://c.tiles.mapbox.com/v4/jonnordling.n141ednk/",
                     "http://d.tiles.mapbox.com/v4/jonnordling.n141ednk/"
             };
-        }else if(basemap.equals("Outdoors")){
+        }else if("Outdoors".equals(basemap)){
             mapProvider = MAPBOX;
             baseURL = new String[]{
                     "http://a.tiles.mapbox.com/v4/jonnordling.n1417e4k/",
@@ -51,7 +51,7 @@ public class MapHelper {
                     "http://c.tiles.mapbox.com/v4/jonnordling.n1417e4k/",
                     "http://d.tiles.mapbox.com/v4/jonnordling.n1417e4k/"
             };
-        }else if(basemap.equals("Dark")){
+        }else if("Dark".equals(basemap)){
             mapProvider = MAPBOX;
             baseURL = new String[]{
                     "http://a.tiles.mapbox.com/v4/jonnordling.n1425ld2/",
@@ -59,7 +59,7 @@ public class MapHelper {
                     "http://c.tiles.mapbox.com/v4/jonnordling.n1425ld2/",
                     "http://d.tiles.mapbox.com/v4/jonnordling.n1425ld2/"
             };
-        }else if(basemap.equals("Activities")) {
+        }else if("Activities".equals(basemap)) {
             mapProvider = MAPBOX;
             baseURL = new String[]{
                     "http://a.tiles.mapbox.com/v4/jonnordling.0d981b0d/",
@@ -67,14 +67,14 @@ public class MapHelper {
                     "http://c.tiles.mapbox.com/v4/jonnordling.0d981b0d/",
                     "http://d.tiles.mapbox.com/v4/jonnordling.0d981b0d/",
             };
-        }else if (basemap.equals("Google Maps Street")){
+        }else if ("Google Maps Street".equals(basemap)){
             mapProvider = GOOGLE;
             baseURL= new String[]{
                     "http://mt0.google.com/vt/lyrs=m@135&hl=zh-CN&x=%d&y=%d&z=%d",
                     "http://mt1.google.com/vt/lyrs=m@135&hl=zh-CN&x=%d&y=%d&z=%d",
                     "http://mt2.google.com/vt/lyrs=m@135&hl=zh-CN&x=%d&y=%d&z=%d",
                     "http://mt3.google.com/vt/lyrs=m@135&hl=zh-CN&x=%d&y=%d&z=%d" };
-        }else if (basemap.equals("Google Maps Satellite")){
+        }else if ("Google Maps Satellite".equals(basemap)){
             mapProvider = GOOGLE;
             baseURL= new String[]{
                     "http://khms0.googleapis.com/kh?v=186&x=%d&y=%d&z=%d",

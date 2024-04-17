@@ -222,11 +222,11 @@ public class FormController {
     }
 
     public FormIndex getIndexFromXPath(String xPath) {
-        if ( xPath.equals("beginningOfForm") ) {
+        if ( "beginningOfForm".equals(xPath) ) {
             return FormIndex.createBeginningOfFormIndex();
-        } else if ( xPath.equals("endOfForm") ) {
+        } else if ( "endOfForm".equals(xPath) ) {
             return FormIndex.createEndOfFormIndex();
-        } else if ( xPath.equals("unexpected") ) {
+        } else if ( "unexpected".equals(xPath) ) {
             Log.e(t, "Unexpected string from XPath");
             throw new IllegalArgumentException("unexpected string from XPath");
         } else {

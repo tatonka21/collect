@@ -34,7 +34,7 @@ public class PasswordDialogPreference extends DialogPreference implements
 
         final String adminPW = getPersistedString("");
         // populate the fields if a pw exists
-        if (!adminPW.equalsIgnoreCase("")) {
+        if (!"".equalsIgnoreCase(adminPW)) {
             passwordEditText.setText(adminPW);
             passwordEditText.setSelection(passwordEditText.getText().length());
             verifyEditText.setText(adminPW);

@@ -172,7 +172,7 @@ public class Collect extends Application {
     		dirPath = dirPath.substring(Collect.ODK_ROOT.length());
     		String[] parts = dirPath.split(File.separator);
     		// [appName, instances, tableId, instanceId ]
-    		if ( parts.length == 4 && parts[1].equals("instances") ) {
+    		if ( parts.length == 4 && "instances".equals(parts[1]) ) {
     			return true;
     		}
     	}

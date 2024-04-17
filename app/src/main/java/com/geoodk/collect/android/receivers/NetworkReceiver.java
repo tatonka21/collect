@@ -58,7 +58,7 @@ public class NetworkReceiver extends BroadcastReceiver implements InstanceUpload
                     uploadForms(context);
                 }
             }
-        } else if (action.equals("com.geoodk.collect.android.FormSaved")) {
+        } else if ("com.geoodk.collect.android.FormSaved".equals(action)) {
             ConnectivityManager connectivityManager = (ConnectivityManager) context
                     .getSystemService(Context.CONNECTIVITY_SERVICE);
             NetworkInfo ni = connectivityManager.getActiveNetworkInfo();
@@ -134,7 +134,7 @@ public class NetworkReceiver extends BroadcastReceiver implements InstanceUpload
 
                 String googleUsername = settings.getString(
                         PreferencesActivity.KEY_SELECTED_GOOGLE_ACCOUNT, null);
-                if (googleUsername == null || googleUsername.equalsIgnoreCase("")) {
+                if (googleUsername == null || "".equalsIgnoreCase(googleUsername)) {
                     // just quit if there's no username
                     running = false;
                     return;

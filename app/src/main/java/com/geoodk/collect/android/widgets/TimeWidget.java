@@ -49,7 +49,7 @@ public class TimeWidget extends QuestionWidget {
         String clockType =
             android.provider.Settings.System.getString(context.getContentResolver(),
                 android.provider.Settings.System.TIME_12_24);
-        if (clockType == null || clockType.equalsIgnoreCase("24")) {
+        if (clockType == null || "24".equalsIgnoreCase(clockType)) {
             mTimePicker.setIs24HourView(true);
         }
 

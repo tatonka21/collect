@@ -335,7 +335,7 @@ public final class WebUtils {
 		}
 
 		// if https then enable preemptive basic auth...
-		if (u.getScheme().equals("https")) {
+		if ("https".equals(u.getScheme())) {
 			enablePreemptiveBasicAuth(localContext, u.getHost());
 		}
 

@@ -127,7 +127,7 @@ public class AutoCompleteWidget extends QuestionWidget {
         // If the user has typed text into the autocomplete box that doesn't match any answer, warn
         // them that their
         // solution didn't count.
-        if (!response.equals("")) {
+        if (!"".equals(response)) {
             Toast.makeText(getContext(),
                 "Warning: \"" + response + "\" does not match any answers. No answer recorded.",
                 Toast.LENGTH_LONG).show();

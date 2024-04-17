@@ -116,7 +116,7 @@ public class ExternalAppsUtils {
                         XPathPathExpr pathExpr = XPathReference.getPathExpr(paramEntryValue);
                         XPathNodeset xPathNodeset = pathExpr.eval(formInstance, evaluationContext);
                         result = XPathFuncExpr.unpack(xPathNodeset);
-                    } else if (paramEntryValue.equals("instanceProviderID()")) {
+                    } else if ("instanceProviderID()".equals(paramEntryValue)) {
                         // instanceProviderID returns -1 if the current instance has not been
                         // saved to disk already
                         String path = Collect.getInstance().getFormController().getInstancePath().getAbsolutePath();

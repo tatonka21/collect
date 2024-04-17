@@ -315,7 +315,7 @@ public class GeoPointWidget extends QuestionWidget implements IBinaryWidget {
 		temp = Double.valueOf(location) * 60;
 		location = Double.toString(temp);
 		String secs = location.substring(0, location.indexOf(".")) + '"';
-		if (type.equalsIgnoreCase("lon")) {
+		if ("lon".equalsIgnoreCase(type)) {
 			if (degree.startsWith("-")) {
 				degree = "W " + degree.replace("-", "") + mins + secs;
 			} else

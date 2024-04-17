@@ -68,7 +68,7 @@ public class HierarchyListAdapter extends BaseAdapter {
         }
 
         if (mItems.get(position).getSecondaryText() == null
-                || mItems.get(position).getSecondaryText().equals("")) {
+                || "".equals(mItems.get(position).getSecondaryText())) {
             hev.showSecondary(false);
         } else {
             hev.showSecondary(true);

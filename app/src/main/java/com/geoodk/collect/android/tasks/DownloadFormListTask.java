@@ -129,7 +129,7 @@ public class DownloadFormListTask extends AsyncTask<Void, String, HashMap<String
                     continue;
                 }
                 String name = xformElement.getName();
-                if (!name.equalsIgnoreCase("xform")) {
+                if (!"xform".equalsIgnoreCase(name)) {
                     // someone else's extension?
                     continue;
                 }
@@ -155,37 +155,37 @@ public class DownloadFormListTask extends AsyncTask<Void, String, HashMap<String
                         continue;
                     }
                     String tag = child.getName();
-                    if (tag.equals("formID")) {
+                    if ("formID".equals(tag)) {
                         formId = XFormParser.getXMLText(child, true);
                         if (formId != null && formId.length() == 0) {
                             formId = null;
                         }
-                    } else if (tag.equals("name")) {
+                    } else if ("name".equals(tag)) {
                         formName = XFormParser.getXMLText(child, true);
                         if (formName != null && formName.length() == 0) {
                             formName = null;
                         }
-                    } else if (tag.equals("version")) {
+                    } else if ("version".equals(tag)) {
                         version = XFormParser.getXMLText(child, true);
                         if (version != null && version.length() == 0) {
                         	version = null;
                         }
-                    } else if (tag.equals("majorMinorVersion")) {
+                    } else if ("majorMinorVersion".equals(tag)) {
                         majorMinorVersion = XFormParser.getXMLText(child, true);
                         if (majorMinorVersion != null && majorMinorVersion.length() == 0) {
                             majorMinorVersion = null;
                         }
-                    } else if (tag.equals("descriptionText")) {
+                    } else if ("descriptionText".equals(tag)) {
                         description = XFormParser.getXMLText(child, true);
                         if (description != null && description.length() == 0) {
                             description = null;
                         }
-                    } else if (tag.equals("downloadUrl")) {
+                    } else if ("downloadUrl".equals(tag)) {
                         downloadUrl = XFormParser.getXMLText(child, true);
                         if (downloadUrl != null && downloadUrl.length() == 0) {
                             downloadUrl = null;
                         }
-                    } else if (tag.equals("manifestUrl")) {
+                    } else if ("manifestUrl".equals(tag)) {
                         manifestUrl = XFormParser.getXMLText(child, true);
                         if (manifestUrl != null && manifestUrl.length() == 0) {
                             manifestUrl = null;
@@ -219,13 +219,13 @@ public class DownloadFormListTask extends AsyncTask<Void, String, HashMap<String
                 }
                 Element child = formsElement.getElement(i);
                 String tag = child.getName();
-                if (tag.equals("formID")) {
+                if ("formID".equals(tag)) {
                     formId = XFormParser.getXMLText(child, true);
                     if (formId != null && formId.length() == 0) {
                         formId = null;
                     }
                 }
-                if (tag.equalsIgnoreCase("form")) {
+                if ("form".equalsIgnoreCase(tag)) {
                     String formName = XFormParser.getXMLText(child, true);
                     if (formName != null && formName.length() == 0) {
                         formName = null;
