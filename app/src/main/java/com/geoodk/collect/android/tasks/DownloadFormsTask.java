@@ -14,6 +14,8 @@
 
 package com.geoodk.collect.android.tasks;
 
+import io.github.pixee.security.HostValidator;
+import io.github.pixee.security.Urls;
 import java.io.*;
 import java.net.MalformedURLException;
 import java.net.URI;
@@ -367,7 +369,7 @@ public class DownloadFormsTask extends
         URI uri;
         try {
             // assume the downloadUrl is escaped properly
-            URL url = new URL(downloadUrl);
+            URL url = Urls.create(downloadUrl, Urls.HTTP_PROTOCOLS, HostValidator.DENY_COMMON_INFRASTRUCTURE_TARGETS);
             uri = url.toURI();
         } catch (MalformedURLException e) {
             e.printStackTrace();
