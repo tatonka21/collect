@@ -14,6 +14,8 @@
 
 package com.geoodk.collect.android.utilities;
 
+import io.github.pixee.security.HostValidator;
+import io.github.pixee.security.Urls;
 import java.net.MalformedURLException;
 import java.net.URL;
 
@@ -22,7 +24,7 @@ public class UrlUtils {
     public static boolean isValidUrl(String url) {
 
         try {
-            new URL(url);
+            Urls.create(url, Urls.HTTP_PROTOCOLS, HostValidator.DENY_COMMON_INFRASTRUCTURE_TARGETS);
             return true;
         } catch (MalformedURLException e) {
             return false;
