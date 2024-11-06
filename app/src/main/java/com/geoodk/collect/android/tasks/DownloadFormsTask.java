@@ -19,6 +19,7 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -362,7 +363,7 @@ public class DownloadFormsTask extends
      * @throws Exception
      */
     private void downloadFile(File file, String downloadUrl) throws Exception {
-        File tempFile = File.createTempFile(file.getName(), TEMP_DOWNLOAD_EXTENSION, new File(Collect.CACHE_PATH));
+        File tempFile = Files.createTempFile(new File(Collect.CACHE_PATH).toPath(), file.getName(), TEMP_DOWNLOAD_EXTENSION).toFile();
 
         URI uri;
         try {
