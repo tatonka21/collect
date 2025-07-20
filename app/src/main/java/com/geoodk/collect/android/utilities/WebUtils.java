@@ -14,6 +14,8 @@
 
 package com.geoodk.collect.android.utilities;
 
+import io.github.pixee.security.HostValidator;
+import io.github.pixee.security.Urls;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -321,7 +323,7 @@ public final class WebUtils {
 			HttpContext localContext, HttpClient httpclient) {
 		URI u = null;
 		try {
-			URL url = new URL(urlString);
+			URL url = Urls.create(urlString, Urls.HTTP_PROTOCOLS, HostValidator.DENY_COMMON_INFRASTRUCTURE_TARGETS);
 			u = url.toURI();
 		} catch (Exception e) {
 			e.printStackTrace();
